@@ -1,0 +1,190 @@
+.principal{
+	margin-top:50px;
+	font-family: 'Roboto';
+}
+
+/*tarjeta 1*/
+.card-header-first{
+	margin-top:-40px;
+    height: 120px;
+	background: linear-gradient(-90deg, #BF019F, #F28A57); 
+	box-shadow:1px 5px 15px #a2a2a2;
+}
+
+/*tarjeta 2*/
+.card-header-second{
+	box-shadow:1px 7px 15px #a2a2a2;
+    margin: 25px -25px 0px -25px;
+    height: 50px;
+	background: linear-gradient(-90deg, #8E2DE2, #4A00E0); 
+}
+
+/*tarjeta 3*/
+.card-header-third{
+
+    text-align: center;
+    padding-top: 1px;
+    margin: 0px 0px 30px 0px;
+    border-start-end-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 50px;
+	box-shadow:1px 5px 15px #a2a2a2;
+    background: linear-gradient(-90deg, #11998e, #38ef7d); 
+}
+.card-button-third-pay i{
+    padding: 15px 15px;
+    border-radius: 15%;
+    font-size: 3rem;
+	color:#fff;
+	box-shadow:1px 6px 24px #d2d2d2;
+    margin-top: 1rem;
+    margin-bottom: 1rem;;
+	background: linear-gradient(-90deg, #11998e, #38ef7d); 
+}
+.card-header-third-2{
+    text-align: center;
+    padding-top: 3px;
+    padding-left: 15rem;
+    margin: -11px 0px 30px 10px;
+    border-end-start-radius: 10px;
+    border-end-end-radius: 10px;
+    height: 50px;
+	box-shadow:1px 5px 15px #a2a2a2;
+    background: linear-gradient(-90deg, #11998e, #38ef7d); 
+}
+
+.card-header-third-2 span i:hover,.card-body-third  i:hover{
+	box-shadow:1px 1px 15px #000;
+}
+.card-button-third i{
+	padding: 10px 10px;
+    border-radius: 50%;
+    font-size: 1.75rem;
+	color:#fff;
+	box-shadow:1px 6px 24px #d2d2d2;
+    margin-top: 1rem;
+    margin-bottom: 1rem;;
+	background: linear-gradient(-90deg, #11998e, #38ef7d); 
+}
+
+
+
+/*efecto shadows para todas las tarjetas*/
+.card-section{
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+/*Para el efecto sombra al pasar por encima el mouse*/
+.card-section:hover{
+	box-shadow:1px 1px 20px #d2d2d2;
+}
+
+
+.card-text-third{
+    text-align: left;
+    margin-left: 3rem;
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.75rem; 
+}
+
+.card-header-title{
+    text-align: center;
+    font-size: 2.25rem; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 10px;
+}
+.card-img-top{
+    max-width: 100%;
+    height: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 1rem;
+}
+
+.card-divider {
+    border: none;
+    border: 1px solid #2ae212;
+     
+    margin: 20px 25px 20px 25px;
+}
+
+.empty {
+    font-family: 'Caprasimo', cursive;
+    top: 50%;
+    left: 50%;
+    font-size: 7rem;
+    color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  background: linear-gradient(to right, #00ff00, #ffff00ad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  -webkit-mask-image: linear-gradient(to right, #00ff00, #ffff00);
+  mask-image: linear-gradient(to right, #00ff00, #ffff00); 
+}
+
+.empty-fastcar{
+    font-family: 'Caprasimo', cursive;
+    top: 50%;
+    left: 50%;
+    font-size: 10rem;
+    color: transparent;
+    -webkit-text-stroke: 2px #ffffff;
+    background: linear-gradient(to right, #00ff00, #ffff00ad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    -webkit-mask-image: linear-gradient(to right, #00ff00, #ffff00);
+    mask-image: linear-gradient(to right, #00ff00, #ffff00); 
+}
+
+.empty-text {
+    font-family: 'Caprasimo', cursive;
+    top: 50%;
+    left: 50%;
+    font-size: 5rem;
+    margin-top: -3rem;
+    color: transparent;
+    -webkit-text-stroke: 2px #ffffff;
+    background: linear-gradient(to right, #00ff00, #ffff00ad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    -webkit-mask-image: linear-gradient(to right, #00ff00, #ffff00ad);
+    mask-image: linear-gradient(to right, #00ff00, #ffff00ad);
+}
+
+.card-img{
+    height: 200px; 
+    width: auto; 
+    max-width: 100%;
+}
+
+.card-map{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+.label-map{
+    width: max-content;
+    color: tomato;
+    font-size: 13px;
+    border-bottom: 1px solid tomato;
+    margin: 3px 0;
+}
+.h5-map{
+    color: #000 ;
+}
+.card-img-map{
+    height: auto; 
+    width: auto; 
+    
+}
