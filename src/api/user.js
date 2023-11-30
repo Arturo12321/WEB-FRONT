@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const API = 'http://localhost:1538/api'
-export const registerRequest = async (user) =>{
+export const registerRequest = (user) =>{
     const formData = new FormData();
 
     formData.append("username", user.username);
@@ -18,15 +18,9 @@ export const registerRequest = async (user) =>{
     formData.append("password", user.password);
     formData.append("image", user.image);
 
-    try {
-        const response = await axios.post(`${API}/register`, formData, {
-            headers: {
+    return axios.post(`${API}/register`, formData, {
+        headers: {
             'Content-Type': 'multipart/form-data',
-            },
-        });
-        return response.data;
-    } catch (error) {
-        console.error('Error during registration:', error);
-        throw error;
-    }
+        },
+    });
 };

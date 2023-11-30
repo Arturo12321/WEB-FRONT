@@ -2646,3 +2646,18 @@ fieldset[disabled] .form-control {
     color: #ffffff !important;
     padding: 6px 12px !important;
 }
+
+.error-message{
+    color: red;
+    font-weight: bold;
+}
+.mapErrors{
+    background-color: #e00a0a; /* Un tono rojo claro para el fondo */
+    font-weight: bolder;
+    border: 1px solid #000000; /* Un borde rojo más oscuro */
+    padding: 0.5rem;
+    color: #ececec; /* Un tono rojo oscuro para el texto */
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
