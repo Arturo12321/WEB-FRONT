@@ -4,11 +4,18 @@ import { registerRequest } from "../../api/user";
 
 export default function RegisterPage() {
 
-    const {register, handleSubmit } = useForm();
+    const {register, handleSubmit,setError, formState: { errors }, } = useForm();
 
     const onSubmit = handleSubmit(async(data) => {
-        const { username, firstname, lastname, dni, birth_date, company_name, ruc, email, address, cell_phone, password, image} = data;
+        const { username, firstname, lastname, dni, birth_date, company_name, ruc, email, address, cell_phone, password,repeatPassword, image} = data;
         
+        if (password !== repeatPassword) {
+            setError("repeatPassword", {
+                type: "manual",
+                message: "Passwords do not match",
+            });
+            return;
+        }
         const userData = { 
             username, 
             firstname, 
@@ -20,10 +27,15 @@ export default function RegisterPage() {
             email, 
             address, 
             cell_phone, 
-            password, 
+            password,
             image:image[0], 
         };
-        registerRequest(userData);
+        try {
+            const res = await registerRequest(userData);
+            console.log(res);
+        } catch (error) {
+            console.error("Error during registration:", error);
+        }
     });
 
 
@@ -36,9 +48,7 @@ export default function RegisterPage() {
                     </div>
                     <div className="header-title">
                         <h3>Register</h3>
-                        <small>
-                            Please enter your data to register.
-                        </small>
+                        <small>Please enter your data to register.</small>
                     </div>
                 </div>
                 <div className="panel panel-filled">
@@ -108,12 +118,14 @@ export default function RegisterPage() {
                                 <label className="control-label">Password</label>
                                 <input type="password" className="form-control" placeholder="Introduce your password" { ...register("password", {required: true} )} />
                                 <span className="help-block small">Your unique password to app</span>
+                                {errors.password && (<p className="error-message">{errors.password.message}</p>)}
                             </div>
 
                             <div className="form-group col-lg-6">
                                 <label className="control-label">Repite - Password</label>
-                                <input type="password" className="form-control" placeholder="Repite your password" />
+                                <input type="password" className="form-control" placeholder="Repite your password" {...register("repeatPassword", {required:"Repeat password is required"})} />
                                 <span className="help-block small">Your repite password to app</span>
+                                {errors.repeatPassword && (<p className="error-message">{errors.repeatPassword.message}</p>)}
                             </div>
 
                             <div className="form-group col-lg-12">
