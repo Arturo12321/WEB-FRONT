@@ -2,7 +2,7 @@
 import { useForm } from "react-hook-form"
 import { useUser } from "../../context/UserContext";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function RegisterPage() {
 
@@ -48,7 +48,7 @@ export default function RegisterPage() {
 
     return (
         <section className="content">
-            <div className="container-center lg animated slideInDown">
+            <div className="container-center md animated slideInDown">
                 <div className="view-header">
                     <div className="header-icon">
                         <i className="pe page-header-icon pe-7s-add-user"></i>
@@ -119,7 +119,7 @@ export default function RegisterPage() {
 
                             <div className="form-group col-lg-6">
                                 <label className="control-label">Email:</label>
-                                <input type="text" className="form-control" placeholder="Introduce your email" { ...register("email", {required: true} )} />
+                                <input type="email" className="form-control" placeholder="Introduce your email" { ...register("email", {required: true} )} />
                                 <span className="help-block small">Your unique email to app</span>
                                 
                                 {errors.email && (<p className="error-message">Email is required</p>)}
@@ -162,7 +162,8 @@ export default function RegisterPage() {
 
                             <div className="col-sm-12 text-center">
                                 <div className="panel-body buttons-margin">
-                                    <button type="submit" className="btn btn-w-md btn-success">Register</button>&nbsp;&nbsp;
+                                    <button type="submit" className="btn btn-w-md btn-primary">Register</button>&nbsp;&nbsp;
+                                    <Link className="btn btn-w-md  btn-success" to="/login" >Login</Link> 
                                 </div>
                             </div>
                         </form>

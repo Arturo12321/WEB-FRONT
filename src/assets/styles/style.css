@@ -2652,12 +2652,30 @@ fieldset[disabled] .form-control {
     font-weight: bold;
 }
 .mapErrors{
-    background-color: #e00a0a; /* Un tono rojo claro para el fondo */
+    background-color: #e00a0a;
     font-weight: bolder;
-    border: 1px solid #000000; /* Un borde rojo más oscuro */
+    border: 1px solid #000000; 
     padding: 0.5rem;
-    color: #ececec; /* Un tono rojo oscuro para el texto */
-    text-align: center;
+    color: #ececec;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+}
+.l-back{
+    color: #1d9fee;
+}
+.p-back{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    padding: 1px 35px 0px 10px;
+}
+
+.l-back-register{
+    color: #1d9fee;
+}
+.p-back-register{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    padding: 1px 40px 0px 480px;
 }

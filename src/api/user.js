@@ -24,3 +24,5 @@ export const registerRequest = (user) =>{
         },
     });
 };
+
+export const loginRequest = (user) => axios.post (`${API}/login`,user);

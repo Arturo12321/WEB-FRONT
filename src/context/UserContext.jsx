@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useState, useContext } from "react";
-import { registerRequest } from "../api/user";
+import { createContext, useState, useContext, useEffect } from "react";
+import { registerRequest, loginRequest } from "../api/user";
 
 const UserContext = createContext()
 
@@ -28,7 +28,26 @@ export const UserProvider = ({children}) => {
             console.log(error.response);
             setErrors(error.response.data);
         }
-    }
+    };
+
+    const loginContext = async (user) => {
+        try {
+            const res = await loginRequest(user);
+            console.log(res)
+        } catch (error) {
+            console.log(error.response);
+            setErrors(error.response.data);
+        }
+    };
+
+    useEffect(() => {
+        if (errors.length > 0) {
+            const timer = setTimeout(() => {
+                setErrors([]);
+        },5000);
+        return () => clearTimeout(timer);
+        }
+    },[errors])
 
     return (
         <UserContext.Provider
@@ -36,7 +55,8 @@ export const UserProvider = ({children}) => {
             registerContext,
             user,
             isAuthenticated,
-            errors
+            errors,
+            loginContext
         }}>
             {children}
         </UserContext.Provider>
