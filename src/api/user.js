@@ -21,7 +21,7 @@ export const registerRequest = (user) =>{
     return axios.post(`${API}/register`, formData, {
         headers: {
             'Content-Type': 'multipart/form-data',
-        },
+        }
     });
 };
 

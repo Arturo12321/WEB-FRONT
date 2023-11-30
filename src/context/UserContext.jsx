@@ -25,8 +25,10 @@ export const UserProvider = ({children}) => {
             setUser(res.data);
             setIsAuthenticated(true);
         } catch (error) {
-            console.log(error.response);
-            setErrors(error.response.data);
+            if (Array.isArray(error.response.data)){  
+                return setErrors(error.response.data);
+            } 
+            setErrors([error.response.data.message]);
         }
     };
 
@@ -34,9 +36,13 @@ export const UserProvider = ({children}) => {
         try {
             const res = await loginRequest(user);
             console.log(res)
+            setUser(res.data);
+            setIsAuthenticated(true);
         } catch (error) {
-            console.log(error.response);
-            setErrors(error.response.data);
+            if (Array.isArray(error.response.data)){  
+                return setErrors(error.response.data);
+            } 
+            setErrors([error.response.data.message]);
         }
     };
 

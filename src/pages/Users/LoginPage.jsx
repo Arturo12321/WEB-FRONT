@@ -1,18 +1,28 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useForm } from "react-hook-form"
 import { useUser } from "../../context/UserContext";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useNavigate} from "react-router-dom";
 
 export default function LoginPage() {
 
 
 
 const {register, handleSubmit, formState: { errors },}= useForm();
-const {loginContext, errors: loginErrors} =useUser();
+const {loginContext, isAuthenticated, errors: loginErrors} =useUser();
+
+const navigate = useNavigate();
+
+
 
 const onSubmit = handleSubmit(async(data) => {
 
   await loginContext(data);
 });
+
+useEffect(() => {
+  if (isAuthenticated) navigate("/cars"); 
+},[isAuthenticated]);
 
   return (
     <section className="content">

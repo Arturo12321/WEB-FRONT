@@ -11,7 +11,7 @@ export default function RegisterPage() {
     
     const navigate = useNavigate();
     useEffect(() => {
-        if (isAuthenticated) navigate("/login"); 
+        if (isAuthenticated) navigate("/cars"); 
     },[isAuthenticated]);
 
 
@@ -91,7 +91,7 @@ export default function RegisterPage() {
                             
                             <div className="form-group col-lg-6">
                                 <label className="control-label">DNI:</label>
-                                <input type="number" className="form-control" placeholder="Introduce your DNI" { ...register("dni", {required: true} )} />
+                                <input type="text" className="form-control" placeholder="Introduce your DNI" { ...register("dni", {required: true} )} />
                                 <span className="help-block small">Your unique DNI to app</span>
                                 {errors.dni && (<p className="error-message">DNI is required</p>)}
                             </div>
@@ -112,7 +112,7 @@ export default function RegisterPage() {
 
                             <div className="form-group col-lg-6">
                                 <label className="control-label">RUC:</label>
-                                <input type="number" className="form-control" placeholder="Introduce your RUC" { ...register("ruc", {required: true} )} />
+                                <input type="text" className="form-control" placeholder="Introduce your RUC" { ...register("ruc", {required: true} )} />
                                 <span className="help-block small">Your unique RUC to app</span>
                                 {errors.ruc && (<p className="error-message">RUC is required</p>)}
                             </div>
@@ -134,7 +134,7 @@ export default function RegisterPage() {
 
                             <div className="form-group col-lg-6">
                                 <label className="control-label">Cell Phone</label>
-                                <input type="number" className="form-control" placeholder="Introduce your cell phone number" { ...register("cell_phone", {required: true} )} />
+                                <input type="text" className="form-control" placeholder="Introduce your cell phone number" { ...register("cell_phone", {required: true} )} />
                                 <span className="help-block small">Your unique cell phone to app</span>
                                 {errors.cell_phone && (<p className="error-message">Cell Phone is required</p>)}
                             </div>
