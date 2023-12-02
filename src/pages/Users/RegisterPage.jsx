@@ -11,7 +11,7 @@ export default function RegisterPage() {
     
     const navigate = useNavigate();
     useEffect(() => {
-        if (isAuthenticated) navigate("/cars"); 
+        if (isAuthenticated) navigate("/carsRent"); 
     },[isAuthenticated]);
 
 

@@ -6,25 +6,20 @@ import { Link, useNavigate} from "react-router-dom";
 
 export default function LoginPage() {
 
-
-
 const {register, handleSubmit, formState: { errors },}= useForm();
 const {loginContext, isAuthenticated, errors: loginErrors} =useUser();
 
 const navigate = useNavigate();
 
-
-
 const onSubmit = handleSubmit(async(data) => {
-
-  await loginContext(data);
+    await loginContext(data);
 });
 
 useEffect(() => {
-  if (isAuthenticated) navigate("/cars"); 
+    if (isAuthenticated) navigate("/carsRent"); 
 },[isAuthenticated]);
 
-  return (
+return (
     <section className="content">
             <div className="container-center animated slideInDown">
                 <div className="view-header">
@@ -38,13 +33,13 @@ useEffect(() => {
                 </div>
                 <div className="panel panel-filled">
                     <div className="panel-body">
-                      {
-                          loginErrors.map((error, i) =>  (
-                              <div className="mapErrors" key={i}> 
-                                  {error}
-                              </div>
-                          ))
-                      }
+                        {
+                            loginErrors.map((error, i) =>  (
+                                <div className="mapErrors" key={i}> 
+                                    {error}
+                                </div>
+                            ))
+                        }
                         <form onSubmit={onSubmit}>
                             <div className="form-group">
                                 <label className="control-label">Email:</label>
@@ -66,10 +61,9 @@ useEffect(() => {
                                 </div>
                             </div>
                         </form>
-                        
                     </div>
                 </div>
             </div>
         </section>
-  )
+    )
 }
