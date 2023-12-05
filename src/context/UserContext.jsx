@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useState, useContext, useEffect } from "react";
-import { registerRequest, loginRequest } from "../api/user";
+import { registerRequest, loginRequest, verifyTokenRequest } from "../api/user";
+import Cookies from 'js-cookie';
 
 const UserContext = createContext()
 
@@ -17,7 +18,7 @@ export const UserProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [errors, setErrors] = useState([]);
-
+    const [loading, setLoading] = useState(true);
     const registerContext = async (user) => {
         try {
             const res = await registerRequest(user);
@@ -55,6 +56,31 @@ export const UserProvider = ({children}) => {
         }
     },[errors])
 
+
+
+    useEffect(() => {
+        const checkLogin = async () => {
+            const cookies = Cookies.get();
+            if (!cookies.token) {
+                setIsAuthenticated(false);
+                setLoading(false);
+                return;
+            }
+            try {
+                const res = await verifyTokenRequest(cookies.token);
+                console.log(res);
+                if (!res.data) return setIsAuthenticated(false);
+                setIsAuthenticated(true);
+                setUser(res.data);
+                setLoading(false);
+            } catch (error) {
+                setIsAuthenticated(false);
+                setLoading(false);
+            }
+        };
+        checkLogin();
+    },[])
+
     return (
         <UserContext.Provider
         value={{
@@ -62,7 +88,8 @@ export const UserProvider = ({children}) => {
             user,
             isAuthenticated,
             errors,
-            loginContext
+            loginContext,
+            loading
         }}>
             {children}
         </UserContext.Provider>

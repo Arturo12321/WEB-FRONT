@@ -1,7 +1,5 @@
-import axios from "axios";
+import axios from "./axios";
 
-
-const API = 'http://localhost:1538/api'
 export const registerRequest = (user) =>{
     const formData = new FormData();
 
@@ -18,11 +16,13 @@ export const registerRequest = (user) =>{
     formData.append("password", user.password);
     formData.append("image", user.image);
 
-    return axios.post(`${API}/register`, formData, {
+    return axios.post(`/register`, formData, {
         headers: {
             'Content-Type': 'multipart/form-data',
         }
     });
 };
 
-export const loginRequest = (user) => axios.post (`${API}/login`,user);
+export const loginRequest = (user) => axios.post (`/login`,user);
+
+export const verifyTokenRequest = () => axios.get('/verify');
