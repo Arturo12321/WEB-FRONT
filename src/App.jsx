@@ -1,7 +1,7 @@
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { UserProvider } from "./context/UserContext";
-
+import Navbar from './components/Navbar';
 import HomePage from './pages/Home/HomePage';
 import RegisterPage from "./pages/Users/RegisterPage";
 import LoginPage from "./pages/Users/LoginPage";
@@ -31,12 +31,14 @@ import { CarRentProvider } from './context/CarsRentContext';
 import { CarSaleProvider } from './context/CarsSaleContext';
 
 
+
 export default function App() {
   return (
     <UserProvider>
       <CarRentProvider>
         <CarSaleProvider>
           <BrowserRouter>
+          <Navbar />
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<LoginPage />} />
