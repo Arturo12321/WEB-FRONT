@@ -28,12 +28,12 @@ export default function MyCarsSalePage() {
                                     <div className="panel-body">
                                         <div className="row">
                                             <div className="col-lg-6 col-md-6 col-sm-6">
-                                                <h5 className="m-t-xs">Car Registrados Para La Venta</h5>
+                                                <h5 className="m-t-xs">Cars registered for sale.</h5>
                                             </div>
                                             <div className="col-lg-6 col-md-6 col-sm-6 text-right">
                                                 <div className="panel-body buttons-margin">
                                                     <Link id="btnNuevo" className="btn btn-w-md btn-info"
-                                                        to="/add-car-sale">Nuevo Car</Link>
+                                                        to="/carSaleForm">New Car</Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -42,12 +42,12 @@ export default function MyCarsSalePage() {
                                                 <thead >
                                                     <tr>
                                                         <th>Model</th>
-                                                        <th>Marca</th>
-                                                        <th>Placa</th>
+                                                        <th>Brand</th>
+                                                        <th>Car plate</th>
                                                         <th>Color</th>
-                                                        <th>Precio</th>
-                                                        <th>Fecha de Publicacion</th>
-                                                        <th>Acciones</th>
+                                                        <th>Price</th>
+                                                        <th>Publication date</th>
+                                                        <th>Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -61,10 +61,10 @@ export default function MyCarsSalePage() {
                                                             <td>{days(carSale.createdAt).utc().format('DD/MM/YYYY')}</td>
                                                             <td>
                                                                 <i  style={{ fontSize: '25px' }} className="pe pe-7s-trash text-accent " onClick={() =>{deleteCarSale(carSale._id)}}></i>&nbsp;&nbsp;
-                                                                <Link to={`/cars-sale/${carSale._id}`}>
+                                                                <Link to={`/carSaleForm/${carSale._id}`}>
                                                                     <i  style={{ fontSize: '25px' }} className="pe pe-7s-pen text-accent" ></i>
                                                                 </Link>&nbsp;&nbsp;
-                                                                <Link to={`/see-cars-sale/${carSale._id}`}>
+                                                                <Link to={`/carSale/${carSale._id}`}>
                                                                     <i  style={{ fontSize: '25px' }} className="fa fa-sharp fa-eye text-accent" ></i>
                                                                 </Link>    
                                                             </td>
@@ -85,17 +85,17 @@ export default function MyCarsSalePage() {
                                                                     </div>
                                                                     <div className="card-body card-body-third "> 
                                                                         <img className="card-img card-img-top"  src={`${carSale.image}`}  alt="..."  />    
-                                                                        <h3 className="card-text-third">Marca : {carSale.brand}</h3>
-                                                                        <h3 className="card-text-third">Precio $/. {carSale.price}</h3>
-                                                                        <h3 className="card-text-third">Fecha : {days(carSale.year).utc().format('DD/MM/YYYY')}</h3>
+                                                                        <h3 className="card-text-third">Brand : {carSale.brand}</h3>
+                                                                        <h3 className="card-text-third">Price $/. {carSale.price}</h3>
+                                                                        <h3 className="card-text-third">Date : {days(carSale.year).utc().format('DD/MM/YYYY')}</h3>
                                                                         <hr className="card-divider card" />       
                                                                         <div className="panel-body"> {carSale.description}</div>
                                                                         <div className="card-button-third"> 
                                                                             <i className="pe pe-7s-trash text-accent" onClick={() =>{deleteCarSale(carSale._id)}}></i>&nbsp;&nbsp;
-                                                                            <Link to={`/see-cars-sale/${carSale._id}`}>
+                                                                            <Link to={`/carSale/${carSale._id}`}>
                                                                                 <i className="fa fa-sharp fa-eye text-accent"></i>
                                                                             </Link> &nbsp;&nbsp;
-                                                                            <Link to={`/cars-sale/${carSale._id}`}>
+                                                                            <Link to={`/carSaleForm/${carSale._id}`}>
                                                                                 <i className="pe pe-7s-pen text-accent "></i> 
                                                                             </Link>     
                                                                         </div>                     

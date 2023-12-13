@@ -31,7 +31,7 @@ export default function Navbar() {
                     { isAuthenticated ? (
                         <>  
                             <form className="navbar-form navbar-left">
-                                <input type="text" className="form-control" placeholder="Busca el auto que necesites..." />
+                                <input type="text" className="form-control" placeholder="Find the car you need..." />
                             </form>
                         </>
                         ): (
@@ -78,10 +78,10 @@ export default function Navbar() {
                     <nav>
                         <ul className="nav luna-nav">
                             <li className="nav-category">
-                                Hola,  {user.firstname} buen día....!
+                                Hello {user.firstname}, how are you?
                             </li>
                             <li>
-                                <Link to='/carsRent' >Cars Rent2</Link>
+                                <Link to='/carsRent' >Cars Rent</Link>
                                 <Link to='/carsSale' >Cars Sale</Link>
                                 <Link to='/myCarsRent' >My Car Rental <span className="sub-nav-icon"> <i className="stroke-plus"></i> </span> </Link>
                                 <Link to='/myCarsSale' >My Car Sales <span className="sub-nav-icon"> <i className="stroke-plus"></i> </span></Link>
@@ -91,12 +91,12 @@ export default function Navbar() {
                             
 
                             <li className="nav-category">
-                                Oficinas    
+                                Offices    
                             </li>
 
                             <li>
                                 <Link to='/offices' >Lima <span className="sub-nav-icon"> <i className="stroke-plus"></i> </span></Link>
-                                <Link to='/my-offices' >Mis Oficinas <span className="sub-nav-icon"> <i className="stroke-plus"></i> </span></Link>
+                                <Link to='/my-offices' >My Offices<span className="sub-nav-icon"> <i className="stroke-plus"></i> </span></Link>
 
                                 
                             </li>   
@@ -109,7 +109,7 @@ export default function Navbar() {
                             <li className="nav-info">
                                 <i className="pe pe-7s-shield text-accent"></i>
                                 <div className="m-t-xs">
-                                    <span className="c-white">FASTCAR</span> Hola que tal  {user.firstname} , espero que tengas un buen dia, te saluda el grupo de FastCar.
+                                    <span className="c-white">FASTCARS</span> Hello, how are you {user.firstname}, I hope you have a good day, the FastCar group greets you.
                                 </div>             
                             </li>
                         </ul>

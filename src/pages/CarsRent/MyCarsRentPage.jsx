@@ -14,7 +14,7 @@ export default function MyCarsRentPage() {
     console.log(user);
     useEffect(() => {
         getMyCarsRent();
-      },[]);
+    },[]);
 
     return (
         <section className="content">
@@ -28,12 +28,12 @@ export default function MyCarsRentPage() {
                                     <div className="panel-body">
                                         <div className="row">
                                             <div className="col-lg-6 col-md-6 col-sm-6">
-                                                <h5 className="m-t-xs">Car Registrados Para El Alquiler.</h5>
+                                                <h5 className="m-t-xs">Car registered for rental.</h5>
                                             </div>
                                             <div className="col-lg-6 col-md-6 col-sm-6 text-right">
                                                 <div className="panel-body buttons-margin">
                                                     <Link id="btnNuevo" className="btn btn-w-md btn-info"
-                                                        to="/add-car-rent">Nuevo Car</Link>
+                                                        to="/carRentForm">New Car</Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -42,12 +42,12 @@ export default function MyCarsRentPage() {
                                                 <thead >
                                                     <tr>
                                                         <th>Model</th>
-                                                        <th>Marca</th>
-                                                        <th>Placa</th>
+                                                        <th>Brand</th>
+                                                        <th>Car plate</th>
                                                         <th>Color</th>
-                                                        <th>Precio</th>
-                                                        <th>Fecha de Publicavion</th>
-                                                        <th>Acciones</th>
+                                                        <th>Price</th>
+                                                        <th>Publication date</th>
+                                                        <th>Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -61,10 +61,10 @@ export default function MyCarsRentPage() {
                                                             <td>{days(carRent.createdAt).utc().format('DD/MM/YYYY')}</td>
                                                             <td>
                                                                 <i  style={{ fontSize: '25px' }} className="pe pe-7s-trash text-accent " onClick={() =>{deleteCarRent(carRent._id)}}></i>&nbsp;&nbsp;
-                                                                <Link to={`/cars-rent/${carRent._id}`}>
+                                                                <Link to={`/carRentForm/${carRent._id}`}>
                                                                     <i  style={{ fontSize: '25px' }} className="pe pe-7s-pen text-accent" ></i>
                                                                 </Link>&nbsp;&nbsp;                                                                
-                                                                <Link to={`/see-cars-rent/${carRent._id}`}>
+                                                                <Link to={`/carRent/${carRent._id}`}>
                                                                     <i  style={{ fontSize: '25px' }} className="fa fa-sharp fa-eye text-accent" ></i>
                                                                 </Link>
                                                             </td>
@@ -85,17 +85,17 @@ export default function MyCarsRentPage() {
                                                                     </div>
                                                                     <div className="card-body card-body-third "> 
                                                                         <img className="card-img card-img-top"  src={`${carRent.image}`}  alt="..."  />    
-                                                                        <h3 className="card-text-third">Marca : {carRent.brand}</h3>
-                                                                        <h3 className="card-text-third">Precio $/. {carRent.price}</h3>
-                                                                        <h3 className="card-text-third">Fecha : {days(carRent.year).utc().format('DD/MM/YYYY')}</h3>                                                                        <hr className="card-divider card" />       
+                                                                        <h3 className="card-text-third">Brand : {carRent.brand}</h3>
+                                                                        <h3 className="card-text-third">Price $/. {carRent.price}</h3>
+                                                                        <h3 className="card-text-third">Date : {days(carRent.year).utc().format('DD/MM/YYYY')}</h3>                                                                        <hr className="card-divider card" />       
                                                                         <hr className="card-divider card" /> 
                                                                         <div className="panel-body"> {carRent.description}</div>
                                                                         <div className="card-button-third">
                                                                             <i className="pe pe-7s-trash text-accent" onClick={() =>{deleteCarRent(carRent._id)}}></i>&nbsp;&nbsp;
-                                                                            <Link to={`/see-cars-rent/${carRent._id}`}>
+                                                                            <Link to={`/carRent/${carRent._id}`}>
                                                                                 <i className="fa fa-sharp fa-eye text-accent"></i>
                                                                             </Link> &nbsp;&nbsp;
-                                                                            <Link to={`/cars-rent/${carRent._id}`}>
+                                                                            <Link to={`/carRentForm/${carRent._id}`}>
                                                                                 <i className="pe pe-7s-pen text-accent "></i> 
                                                                             </Link>     
                                                                         </div>                     

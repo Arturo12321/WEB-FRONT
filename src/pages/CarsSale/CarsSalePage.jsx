@@ -17,7 +17,7 @@ export default function CarsSalePage() {
 
     useEffect(() => {
         getCarsSale();
-      },[]);
+    },[]);
 
     return (
         <section className="content">
@@ -32,7 +32,7 @@ export default function CarsSalePage() {
                                         <div className="row">
                                             <div className="col-lg-12 col-md-12 col-sm-12">
                                                 <div className="card-header card-header-third-2 rounded">
-                                                    <h1 className="card-header-title">Hola {user.firstname}</h1>
+                                                    <h1 className="card-header-title">Welcome {user.firstname} {user.lastname}</h1>
                                                 </div>
                                             </div>
                                         </div>
@@ -41,16 +41,16 @@ export default function CarsSalePage() {
                                                 <div className="col-lg-12 text-center">
                                                     <div className="row">
                                                         {carsSale.map((carSale) => (
-                                                            <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={carSale._id}>
+                                                            <div className="col-lg-4 col-md-4 col-sm-6 mb-4" key={carSale._id}>
                                                                 <div className="card-section border rounded ml-4 mr-4">
                                                                     <div className="card-header card-header-third rounded">
                                                                         <h3 className="card-header-title">{carSale.model}</h3>
                                                                     </div>
                                                                     <div className="card-body card-body-third "> 
                                                                         <img className="card-img card-img-top "  src={`${carSale.image}`}  alt="..."  />    
-                                                                        <h3 className="card-text-third">Marca : {carSale.brand}</h3>
-                                                                        <h3 className="card-text-third">Precio $/. {carSale.price}</h3>
-                                                                        <h3 className="card-text-third">Fecha : {days(carSale.year).utc().format('DD/MM/YYYY')}</h3>
+                                                                        <h3 className="card-text-third">Brand : {carSale.brand}</h3>
+                                                                        <h3 className="card-text-third">Price $/. {carSale.price}</h3>
+                                                                        <h3 className="card-text-third">Date : {days(carSale.year).utc().format('DD/MM/YYYY')}</h3>
                                                                         <hr className="card-divider card" />       
                                                                         <div className="panel-body">
                                                                             {carSale.description}
