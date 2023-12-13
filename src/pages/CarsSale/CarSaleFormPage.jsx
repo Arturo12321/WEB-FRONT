@@ -1,14 +1,37 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useForm } from "react-hook-form";
 import { useCarsSale } from "../../context/CarsSaleContext";
-import { Link, useNavigate } from "react-router-dom";
-// import { useEffect } from "react";
-// import { Link, useNavigate, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import dayjs from "dayjs";
 export default function CarSaleFormPage() {
-    const {register, handleSubmit, formState: { errors } } = useForm();
-    const {createCarSale} = useCarsSale();
+    const {register, setValue, handleSubmit, formState: { errors } } = useForm();
+    const {createCarSale, getCarSale, updateCarSale} = useCarsSale();
     const navigate = useNavigate();
-    // const params = useParams();
+    const params = useParams();
+
+    useEffect(() => {
+        async function loadCar() {
+            if(params.id) {
+                const carSale = await getCarSale(params.id);
+                console.log(carSale);
+                setValue('brand', carSale.brand);
+                setValue('model', carSale.model);
+                setValue('year',  dayjs(carSale.year).utc().format('YYYY-MM-DD'));
+                setValue('image', carSale.image);
+                setValue('license_plate_number', carSale.license_plate_number);
+                setValue('color', carSale.color);
+                setValue('price', carSale.price);
+                setValue('description',carSale.description);
+                setValue('transmission',carSale.transmission);
+                setValue('fuel',carSale.fuel);
+                setValue('seats',carSale.seats);
+                setValue('engine',carSale.engine);
+                setValue('mileage',carSale.mileage);
+            }
+        }
+        loadCar()
+    },[])
 
     const onSubmit = handleSubmit ((data) => {
         const { brand, model, year, image, license_plate_number, color, price, description, transmission, fuel, seats, engine, mileage} = data;
@@ -27,7 +50,11 @@ export default function CarSaleFormPage() {
             engine, 
             mileage
         };
-        createCarSale(carSaleData);
+        if (params.id) {
+            updateCarSale(params.id, carSaleData);
+        }else {
+            createCarSale(carSaleData);
+        }
         navigate('/pages/CarsSale/CarsSalePage');
     })
 

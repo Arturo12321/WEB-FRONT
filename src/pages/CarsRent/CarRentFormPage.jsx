@@ -1,16 +1,39 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useForm } from "react-hook-form";
 import { useCarsRent } from "../../context/CarsRentContext";
-import { Link, useNavigate } from "react-router-dom";
-// import { useEffect } from "react";
-// import { Link, useNavigate, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import dayjs from "dayjs";
     
 export default function CarRentFormPage() {
 
-    const {register, handleSubmit, formState: { errors } } = useForm();
-    const {createCarRent} = useCarsRent();
+    const {register,setValue, handleSubmit, formState: { errors } } = useForm();
+    const {createCarRent, getCarRent, updateCarRent } = useCarsRent();
     const navigate = useNavigate();
-    // const params = useParams();
+    const params = useParams();
+
+    useEffect(() => {
+        async function loadCar() {
+            if(params.id) {
+                const carRent = await getCarRent(params.id);
+                console.log(carRent);
+                setValue('brand', carRent.brand);
+                setValue('model', carRent.model);
+                setValue('year', dayjs(carRent.year).utc().format('YYYY-MM-DD'));
+                setValue('image', carRent.image);
+                setValue('license_plate_number', carRent.license_plate_number);
+                setValue('color', carRent.color);
+                setValue('price', carRent.price);
+                setValue('description',carRent.description);
+                setValue('transmission',carRent.transmission);
+                setValue('fuel',carRent.fuel);
+                setValue('seats',carRent.seats);
+                setValue('engine',carRent.engine);
+                setValue('mileage',carRent.mileage);
+            }
+        }
+        loadCar()
+    },[])
 
     const onSubmit = handleSubmit ((data) => {
         const { brand, model, year, image, license_plate_number, color, price, description, transmission, fuel, seats, engine, mileage} = data;
@@ -29,10 +52,13 @@ export default function CarRentFormPage() {
             engine, 
             mileage
         };
-        createCarRent(carRentData);
+        if (params.id) {
+            updateCarRent(params.id, carRentData);
+        }else {
+            createCarRent(carRentData);
+        }
         navigate('/pages/CarsRent/CarsRentPage');
-    })
-
+    });
 
     return (
         <section className="content">
