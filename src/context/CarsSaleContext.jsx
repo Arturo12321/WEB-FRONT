@@ -9,7 +9,7 @@ export const useCarsSale = () => {
     const context = useContext(CarSaleContext);
 
     if(!context) {
-        throw new Error("useCarsRent must be used within a CarSaleContext");
+        throw new Error("useCarsSale must be used within a CarSaleContext");
     }
     return context;
 }

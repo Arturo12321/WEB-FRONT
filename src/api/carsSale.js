@@ -1,10 +1,10 @@
 import axios from "./axios";
 
-export const getCarsSaleRequest = () => axios.get("/cars/sale/getcars")
+export const getCarsSaleRequest = () => axios.get("/cars/sale/getcars");
 
-export const getMyCarsSaleRequest = () => axios.get("/mycars/sale/getmycars")
+export const getMyCarsSaleRequest = () => axios.get("/mycars/sale/getmycars");
 
-export const getCarSaleRequest = (id) => axios.get(`/car/sale/getcar/${id}`)
+export const getCarSaleRequest = (id) => axios.get(`/car/sale/getcar/${id}`);
 
 export const createCarSaleRequest = (carSale) => {
     const formData = new FormData();
@@ -52,4 +52,4 @@ export const updateCarSaleRequest = (id, carSale) => {
     });
 };
 
-export const deleteCarSaleRequest = (id) => axios.delete(`/car/sale/deleteCar/${id}`)
+export const deleteCarSaleRequest = (id) => axios.delete(`/car/sale/deleteCar/${id}`);

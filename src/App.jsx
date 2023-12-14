@@ -29,12 +29,15 @@ import OfficeFormPage from './pages/Offices/OfficeFormPage';
 import ProtectedRoute from './pages/Home/ProtectedRoute';
 import { CarRentProvider } from './context/CarsRentContext';
 import { CarSaleProvider } from './context/CarsSaleContext';
+import { UsersProvider } from './context/UsersContext';
+import UserFormPage from './pages/Users/UserFormPage';
 
 
 
 export default function App() {
   return (
     <UserProvider>
+      <UsersProvider>
       <CarRentProvider>
         <CarSaleProvider>
           <BrowserRouter>
@@ -48,6 +51,7 @@ export default function App() {
 
                 <Route path='/users' element={<UsersPage/>}/>
                 <Route path='/profile' element={<ProfilePage/>}/>
+                <Route path='/profile/:id' element={<UserFormPage/>}/>
 
                 <Route path='/carsRent' element={<CarsRentPage/>}/>
                 <Route path='/carRent/:id' element={<CarRentPage/>}/>
@@ -68,13 +72,13 @@ export default function App() {
                 <Route path='/myOffices' element={<MyOfficesPage/>}/>
                 <Route path='/officeForm' element={<OfficeFormPage/>}/>
                 <Route path='/officeForm/:id' element={<OfficeFormPage/>}/>
-
               </Route>
 
             </Routes>
           </BrowserRouter>
         </CarSaleProvider>
       </CarRentProvider>
+      </UsersProvider>
     </UserProvider>
   )
 }

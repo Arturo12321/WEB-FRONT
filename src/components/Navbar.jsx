@@ -4,6 +4,8 @@ import { useUser } from "../context/UserContext";
 export default function Navbar() {
 
     const { isAuthenticated, logout, user } = useUser();
+
+    const isAdmin = isAuthenticated && user && user.role === "admin";
     return (
         <div className="wrapper">
         <nav className="navbar navbar-default navbar-fixed-top">
@@ -22,7 +24,7 @@ export default function Navbar() {
                                 <>
                                     <i className="stroke-hamburgermenu"></i>
                                 </>
-                            ): (
+                            ): (    
                             <>        
                             </>
                             )}
@@ -81,6 +83,9 @@ export default function Navbar() {
                                 Hello {user.firstname}, how are you?
                             </li>
                             <li>
+                            {isAdmin && (
+                                    <Link to='/users'>Users</Link>
+                            )}
                                 <Link to='/carsRent' >Cars Rent</Link>
                                 <Link to='/carsSale' >Cars Sale</Link>
                                 <Link to='/myCarsRent' >My Car Rental <span className="sub-nav-icon"> <i className="stroke-plus"></i> </span> </Link>

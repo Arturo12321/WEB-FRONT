@@ -28,7 +28,7 @@ export default function MyCarsRentPage() {
                                     <div className="panel-body">
                                         <div className="row">
                                             <div className="col-lg-6 col-md-6 col-sm-6">
-                                                <h5 className="m-t-xs">Car registered for rental.</h5>
+                                                <h1 className="m-t-xs">Car registered for rental.</h1>
                                             </div>
                                             <div className="col-lg-6 col-md-6 col-sm-6 text-right">
                                                 <div className="panel-body buttons-margin">
@@ -97,7 +97,7 @@ export default function MyCarsRentPage() {
                                                                             </Link> &nbsp;&nbsp;
                                                                             <Link to={`/carRentForm/${carRent._id}`}>
                                                                                 <i className="pe pe-7s-pen text-accent "></i> 
-                                                                            </Link>     
+                                                                            </Link>
                                                                         </div>                     
                                                                     </div>         
                                                                 </div> 

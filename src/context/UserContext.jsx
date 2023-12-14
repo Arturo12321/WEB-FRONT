@@ -96,7 +96,7 @@ export const UserProvider = ({children}) => {
             errors,
             loginContext,
             loading,
-            logout
+            logout,
         }}>
             {children}
         </UserContext.Provider>
