@@ -65,7 +65,7 @@ export default function UsersPage() {
                                                             
                                                             <td>
                                                                 <i  style={{ fontSize: '25px' }} className="pe pe-7s-trash text-accent " onClick={() =>{deleteUser(user._id)}}></i>&nbsp;&nbsp;
-                                                                <Link to={`/profile/${user._id}`}>
+                                                                <Link to={`/profileForm/${user._id}`}>
                                                                     <i  style={{ fontSize: '25px' }} className="pe pe-7s-pen text-accent" ></i>
                                                                 </Link>&nbsp;&nbsp;                                                                
                                                                 <Link to={`/profile/${user._id}`}>
@@ -88,7 +88,7 @@ export default function UsersPage() {
                                                                             <h3 className="card-header-title">{user.username}</h3>
                                                                         </div>
                                                                         <div className="card-body card-body-third "> 
-                                                                            <img className="card-img card-img-top "  src={`${user.image}`}  alt="..."  />    
+                                                                            <img className="card-img"  src={`${user.image}`}  alt="..."  />    
                                                                             <h3 className="card-text-third">Lastname : {user.lastname}</h3>
                                                                             <h3 className="card-text-third">Firstname : {user.firstname}</h3>
                                                                             <h3 className="card-text-third">Email : {user.email}</h3>
@@ -101,7 +101,7 @@ export default function UsersPage() {
                                                                                 <Link to={`/profile/${user._id}`}>
                                                                                     <i className="fa fa-sharp fa-eye text-accent"></i>
                                                                                 </Link> &nbsp;&nbsp;
-                                                                                <Link to={`/profile/${user._id}`}>
+                                                                                <Link to={`/profileForm/${user._id}`}>
                                                                                     <i className="pe pe-7s-pen text-accent "></i> 
                                                                                 </Link>
                                                                             </div>                     

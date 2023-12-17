@@ -939,11 +939,11 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 .label-accent {
-    background-color: #f6a821;
+    background-color: #4121f6;
 }
 
 body {
-    background: linear-gradient(to bottom, #949393, #000000);
+    background: linear-gradient(to bottom, #030303, #00133b);
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -967,12 +967,12 @@ body {
     z-index: -2;
     left: 0;
     right: 0;
-    background-image: radial-gradient(circle at center, #0a30ee 0%, #cc1909 70%);
+    background-image: radial-gradient(circle at center, #0d1e72 10%, #11055377 70%);
     background-position: 50% 50%;
   }
 .navigation {
     margin-top: 60px;
-    background-color: #24262d;
+    background-color: #02123a;
     width: 200px;
     position: absolute;
     left: 0;
@@ -983,7 +983,7 @@ body {
 }
 
 .navigation nav {
-    background-color: #2a2d35;
+    background-color: #02123a;
 }
 
 .navigation:before {
@@ -995,7 +995,7 @@ body {
     bottom: 0;
     z-index: -1;
     left: 0;
-    background-color: #24262d;
+    background-color: #02123a;
     width: 200px;
 }
 
@@ -1241,7 +1241,7 @@ sup {
 .navbar-default .navbar-brand,
 .navbar-default .navbar-brand:focus {
     width: 200px;
-    background-color: #f6a821;
+    background-color: #010005;
     height: 60px;
     padding: 20px 25px;
     font-weight: 400;
@@ -1255,7 +1255,7 @@ sup {
 
 .navbar-default .navbar-brand:hover {
     color: #FFFFFF;
-    background-color: #f5a212;
+    background-color: #100975;
 }
 
 .navbar-brand span {

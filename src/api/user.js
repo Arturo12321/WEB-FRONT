@@ -45,7 +45,6 @@ export const updateProfileRequest = (id, user) => {
     formData.append("email", user.email);
     formData.append("address", user.address);
     formData.append("cell_phone", user.cell_phone);
-    formData.append("password", user.password);
     formData.append("image", user.image);
     formData.append("role", user.role);
 

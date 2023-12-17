@@ -47,7 +47,7 @@ export default function CarsRentPage() {
                                                                             <h3 className="card-header-title">{carRent.model}</h3>
                                                                         </div>
                                                                         <div className="card-body card-body-third "> 
-                                                                            <img className="card-img card-img-top "  src={`${carRent.image}`}  alt="..."  />    
+                                                                            <img className="card-img"  src={`${carRent.image}`}  alt="..."  />    
                                                                             <h3 className="card-text-third">Brand : {carRent.brand}</h3>
                                                                             <h3 className="card-text-third">Price $/. {carRent.price}</h3>
                                                                             <h3 className="card-text-third">Date : {days(carRent.year).utc().format('DD/MM/YYYY')}</h3>

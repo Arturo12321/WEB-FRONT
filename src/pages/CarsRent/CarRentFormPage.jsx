@@ -57,7 +57,7 @@ export default function CarRentFormPage() {
         }else {
             createCarRent(carRentData);
         }
-        navigate('/pages/CarsRent/CarsRentPage');
+        navigate('/myCarsRent');
     });
 
     return (

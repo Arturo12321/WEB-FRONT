@@ -31,6 +31,7 @@ import { CarRentProvider } from './context/CarsRentContext';
 import { CarSaleProvider } from './context/CarsSaleContext';
 import { UsersProvider } from './context/UsersContext';
 import UserFormPage from './pages/Users/UserFormPage';
+import UserPage from './pages/Users/UserPage';
 
 
 
@@ -51,7 +52,8 @@ export default function App() {
 
                 <Route path='/users' element={<UsersPage/>}/>
                 <Route path='/profile' element={<ProfilePage/>}/>
-                <Route path='/profile/:id' element={<UserFormPage/>}/>
+                <Route path='/profileForm/:id' element={<UserFormPage/>}/>
+                <Route path='/profile/:id' element={<UserPage/>}/>
 
                 <Route path='/carsRent' element={<CarsRentPage/>}/>
                 <Route path='/carRent/:id' element={<CarRentPage/>}/>

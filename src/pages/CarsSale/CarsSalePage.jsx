@@ -47,7 +47,7 @@ export default function CarsSalePage() {
                                                                         <h3 className="card-header-title">{carSale.model}</h3>
                                                                     </div>
                                                                     <div className="card-body card-body-third "> 
-                                                                        <img className="card-img card-img-top "  src={`${carSale.image}`}  alt="..."  />    
+                                                                        <img className="card-img"  src={`${carSale.image}`}  alt="..."  />    
                                                                         <h3 className="card-text-third">Brand : {carSale.brand}</h3>
                                                                         <h3 className="card-text-third">Price $/. {carSale.price}</h3>
                                                                         <h3 className="card-text-third">Date : {days(carSale.year).utc().format('DD/MM/YYYY')}</h3>

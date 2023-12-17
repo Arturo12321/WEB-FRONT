@@ -25,7 +25,6 @@ export default function UserFormPage() {
                 setValue('email', user.email);
                 setValue('address', user.address);
                 setValue('cell_phone',user.cell_phone);
-                setValue('password',user.password);
                 setValue('image',user.image);
                 setValue('role',user.role);
             }
@@ -34,7 +33,7 @@ export default function UserFormPage() {
     },[])
 
     const onSubmit = handleSubmit (async(data) => {
-        const { username, firstname, lastname, dni ,birth_date, company_name, ruc, email, address, cell_phone, password, image, role} = data;
+        const { username, firstname, lastname, dni ,birth_date, company_name, ruc, email, address, cell_phone, image, role} = data;
         const userData = { 
             username, 
             firstname, 
@@ -45,8 +44,7 @@ export default function UserFormPage() {
             ruc, 
             email, 
             address, 
-            cell_phone, 
-            password,
+            cell_phone,
             image: image[0],
             role
         };
@@ -151,21 +149,6 @@ export default function UserFormPage() {
                                 <span className="help-block small">Your unique cell phone to app</span>
                                 {errors.cell_phone && (<p className="error-message">Cell Phone is required</p>)}
                             </div>
-
-                            <div className="form-group col-lg-6">
-                                <label className="control-label">Password</label>
-                                <input type="password" className="form-control" placeholder="Introduce your password" { ...register("password", {required: true} )} />
-                                <span className="help-block small">Your unique password to app</span>
-                                {errors.password && (<p className="error-message">{errors.password.message}</p>) && (<p className="error-message">Password is required.</p>)}
-                            </div>
-
-                            <div className="form-group col-lg-6">
-                                <label className="control-label">Repite - Password</label>
-                                <input type="password" className="form-control" placeholder="Repite your password" {...register("repeatPassword", {required:"Repeat password is required"})} />
-                                <span className="help-block small">Your repite password to app</span>
-                                {errors.repeatPassword && (<p className="error-message">{errors.repeatPassword.message}</p>) }
-                            </div>
-
                             <div className="form-group col-lg-6">
                                 <label className="control-label">Role</label>
                                 <input type="text" className="form-control" placeholder="Repite your role" {...register("role", {required:"Repeat role is required"})} />
@@ -175,8 +158,8 @@ export default function UserFormPage() {
 
                             <div className="form-group col-lg-12">
                                 <label className="control-label">Image</label>
-                                <input type="file" className="form-control" placeholder="Introduce your image" { ...register("image", {required: true} )} />
-                                <span className="help-block small">Your unique image to app</span>
+                                <input type="file" className="form-control" placeholder="Introduce your image" { ...register("image", { required: true })} />
+                                <span className="help-block small">Optional: Choose a new image if you want to update it</span>
                                 {errors.image && (<p className="error-message">Image is required</p>) }
                             </div>
 
