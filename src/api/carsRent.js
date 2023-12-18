@@ -20,8 +20,7 @@ export const createCarRentRequest = (carRent) => {
     formData.append("fuel", carRent.fuel);
     formData.append("seats", carRent.seats);
     formData.append("engine", carRent.engine);
-    formData.append("mileage", carRent.mileage)
-    ;
+    formData.append("mileage", carRent.mileage);
 
     return axios.post("/car/rent/createcar", formData, {
         headers: {

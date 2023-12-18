@@ -2,7 +2,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useState } from "react";
 import { createCarSaleRequest, deleteCarSaleRequest, getCarSaleRequest, getCarsSaleRequest, getMyCarsSaleRequest, updateCarSaleRequest} from "../api/carsSale";
-
 const CarSaleContext = createContext();
 
 export const useCarsSale = () => {
