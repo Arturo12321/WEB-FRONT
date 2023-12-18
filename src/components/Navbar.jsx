@@ -101,7 +101,7 @@ export default function Navbar() {
 
                             <li>
                                 <Link to='/offices' >Lima <span className="sub-nav-icon"> <i className="stroke-plus"></i> </span></Link>
-                                <Link to='/my-offices' >My Offices<span className="sub-nav-icon"> <i className="stroke-plus"></i> </span></Link>
+                                <Link to='/myOffices' >My Offices<span className="sub-nav-icon"> <i className="stroke-plus"></i> </span></Link>
 
                                 
                             </li>   

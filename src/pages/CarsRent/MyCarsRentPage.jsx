@@ -15,7 +15,7 @@ export default function MyCarsRentPage() {
     useEffect(() => {
         getMyCarsRent();
     },[]);
-
+// Falta hacer la parte en que no haya un auto. Un jemeplo esta en de MyOffice
     return (
         <section className="content">
         <div className="container-fluid">
