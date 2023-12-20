@@ -119,11 +119,9 @@ export default function OfficesPage() {
                                                                             <h3 className="card-text-third">Latitude : {office.latitude}</h3> 
                                                                             <hr className="card-divider card" />       
                                                                             <div className="card-button-third"> 
-                                                                                <i className="fa fa-automobile text-accent"></i>&nbsp;&nbsp;
-                                                                                <i className="fa fa fa-heart-o text-accent "></i>&nbsp;&nbsp;
-                                                                                <Link to={`/see-office/${office._id}`}>
-                                                                                    <i className="fa fa-sharp fa-eye text-accent "></i> 
-                                                                                </Link>&nbsp;&nbsp;  
+                                                                                <Link to={`/office/${office._id}`}>
+                                                                                    <i className="fa fa-eye"> VER DETALLE</i> 
+                                                                                </Link>
                                                                             </div>                     
                                                                         </div>         
                                                                     </div> 

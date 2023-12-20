@@ -16,6 +16,33 @@ export default function MyCarsSalePage() {
         getMyCarsSale();
     },[]);
 
+    if (carsSale.length === 0) return (
+        <section className="content">
+            <div className="container-center md animated slideInDown">
+    
+                <div className="view-header">
+                    <div className="header-icon">
+                        <i className="pe page-header-icon pe-7s-close-circle"></i>
+                    </div>
+                    <div className="header-title">
+                        <h1>There are no Cars available . . .</h1>
+                    </div>
+                </div>
+                <div className="panel panel-filled">
+                    <div className="panel-body"> 
+                        Hello {user.firstname}, there are no cars on this page, you can refresh the page or you can come back in a moment.
+                    </div>
+                    <div className="panel-body">
+                        Sorry..
+                    </div>
+                </div>
+                <div>
+                    <Link to="/carSaleForm" className="btn btn-accent">CREATE NEW CAR</Link>
+                </div>
+            </div>
+        </section>
+    );
+
     return (
         <section className="content">
         <div className="container-fluid">

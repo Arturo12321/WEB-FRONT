@@ -89,7 +89,6 @@ export default function UserPage() {
                                                 </div>
 
                                                 <div className="col-md-6">
-                                                    {/* Contenido de la primera mitad */}
                                                     <div className="product-images">
                                                         <div className="image-imitation">
                                                             <img

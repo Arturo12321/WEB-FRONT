@@ -41,15 +41,7 @@ export default function CarSalePage() {
                                     <div className="ibox product-detail">
                                     <div className="ibox-content">
                                         <div className="row">
-                                        <div className="col-md-5">
-                                            <div className="product-images">     
-                                                <div className="image-imitation">
-                                                <img className="card-imgs card-img-top"  src={`${carSale.image}`}  alt="..."  /> 
-                                                <small>Esta imagen es referencial al original, si tienes algunas dudas puede contactarse con el dueño.</small>
-                                                </div>         
-                                            </div>
-                                        </div>
-                                        <div className="col-md-7">
+                                        <div className="col-md-6">
                                             <h2 className="font-bold m-b-xs text-center">Hola, parece que te gusto este auto.</h2>
                                             <hr className="card-divider card" /> 
                                             <div className="row">
@@ -97,6 +89,13 @@ export default function CarSalePage() {
                                                 <h4 className="col-lg-12 text-justify">Descripcion:  {carSale.description}</h4>
                                             </div>
                                             </div>
+                                            <div className="col-md-6">
+                                            <div className="product-images">     
+                                                <div className="image-imitation">
+                                                <img className="card-img-top col-lg-12 col-md-12"  src={`${carSale.image}`}  alt="..."  /> 
+                                                </div>         
+                                            </div>
+                                        </div>
                                         </div>
                                         </div>
                                         <hr className="card-divider card" /> 

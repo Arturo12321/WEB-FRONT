@@ -25,19 +25,19 @@ export default function MyOfficesPage() {
                     <i className="pe page-header-icon pe-7s-close-circle"></i>
                 </div>
                 <div className="header-title">
-                  <h1>No hay Oficinas disponibles . . .</h1>
+                    <h1>There are no Offices available . . .</h1>
                 </div>
             </div>
             <div className="panel panel-filled">
                 <div className="panel-body"> 
-                  Hola {user.firstname}, en esta pagina no hay oficinas, puedes actualizar la pagina o puedes volver dentro de un momento. 
+                    Hello {user.firstname}, there are no offices on this page, you can refresh the page or you can come back in a moment.
                 </div>
                 <div className="panel-body">
-                    Disculpa.. 
+                    Sorry..
                 </div>
             </div>
             <div>
-                <Link to="/officeForm" className="btn btn-accent">CREAR NUEVA OFICINA</Link>
+                <Link to="/officeForm" className="btn btn-accent">CREATE NEW OFFICE</Link>
             </div>
         </div>
     </section>

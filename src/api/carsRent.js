@@ -53,3 +53,5 @@ export const updateCarRentRequest = (id, carRent) => {
 };
 
 export const deleteCarRentRequest = (id) => axios.delete(`/cars/rent/deletecar/${id}`);
+
+export const getReportPDF = () => axios.get("/car/rent/generate-pdf");

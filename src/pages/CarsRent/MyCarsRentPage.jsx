@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
+import { useInformePDF } from "../../context/pdfContext";
 import { useCarsRent } from "../../context/CarsRentContext";
 import { useUser } from "../../context/UserContext";
 import { Link } from "react-router-dom";
@@ -11,11 +12,48 @@ export default function MyCarsRentPage() {
 
     const { user } = useUser();
     const { getMyCarsRent,deleteCarRent, carsRent } =  useCarsRent();
+    const { generatePDF } = useInformePDF();
+
     console.log(user);
     useEffect(() => {
         getMyCarsRent();
     },[]);
-// Falta hacer la parte en que no haya un auto. Un jemeplo esta en de MyOffice
+
+    const handleGeneratePDF = async () => {
+        try {
+            await generatePDF();
+        } catch (error) {
+            console.error('Error generating PDF:', error);
+        }
+    };
+
+
+    if (carsRent.length === 0) return (
+        <section className="content">
+            <div className="container-center md animated slideInDown">
+    
+                <div className="view-header">
+                    <div className="header-icon">
+                        <i className="pe page-header-icon pe-7s-close-circle"></i>
+                    </div>
+                    <div className="header-title">
+                        <h1>There are no Cars available . . .</h1>
+                    </div>
+                </div>
+                <div className="panel panel-filled">
+                    <div className="panel-body"> 
+                        Hello {user.firstname}, there are no cars on this page, you can refresh the page or you can come back in a moment.
+                    </div>
+                    <div className="panel-body">
+                        Sorry..
+                    </div>
+                </div>
+                <div>
+                    <Link to="/carRentForm" className="btn btn-accent">CREATE NEW CAR</Link>
+                </div>
+            </div>
+        </section>
+    );
     return (
         <section className="content">
         <div className="container-fluid">
@@ -32,6 +70,7 @@ export default function MyCarsRentPage() {
                                             </div>
                                             <div className="col-lg-6 col-md-6 col-sm-6 text-right">
                                                 <div className="panel-body buttons-margin">
+                                                <button onClick={handleGeneratePDF}>Generate PDF</button>
                                                     <Link id="btnNuevo" className="btn btn-w-md btn-info"
                                                         to="/carRentForm">New Car</Link>
                                                 </div>
